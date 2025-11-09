@@ -10,9 +10,9 @@ public class AutoSaveService implements Runnable {
     public void run() {
         while (running) {
             try {
-                // Guarda las rutinas cada 5 segundos
+                
                 List<Rutina> rutinas = MockData.getRutinas();
-                DataStore.saveRutinas(rutinas); // ✅ ahora se pasa la lista de rutinas
+                DataStore.saveRutinas(rutinas);
                 Thread.sleep(5000);
             } catch (InterruptedException ie) {
                 running = false;

@@ -71,7 +71,7 @@ public class RoutineBuilderPanel extends JPanel {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    // === Vista previa ===
+    
     private void mostrarPreview() {
         Rutina r = construirRutinaActual();
         StringBuilder sb = new StringBuilder();
@@ -80,7 +80,7 @@ public class RoutineBuilderPanel extends JPanel {
         else r.getListaEjercicios().forEach(e -> sb.append("- ").append(e.getNombre()).append(" (").append(e.getTipo()).append(")\n"));
         JOptionPane.showMessageDialog(this, sb.toString(), "Vista previa", JOptionPane.INFORMATION_MESSAGE);
     }
-    // === Exportar TXT ===
+    
     private void exportarTxt() {
         Rutina r = construirRutinaActual();
         String desktop = System.getProperty("user.home") + File.separator + "Desktop";
@@ -96,7 +96,7 @@ public class RoutineBuilderPanel extends JPanel {
             JOptionPane.showMessageDialog(this, "No se pudo exportar el TXT: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    // === Guardar JSON ===
+    
     private void guardarJson() {
         Rutina r = construirRutinaActual();
         String desktop = System.getProperty("user.home") + File.separator + "Desktop";

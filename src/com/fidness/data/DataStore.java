@@ -10,7 +10,7 @@ public class DataStore {
     private static final String FILE_RUTINAS = "rutinas.dat";
     private static final String FILE_USUARIOS = "usuarios.dat";
 
-    // === Guardar rutinas ===
+    
     public static void saveRutinas(List<Rutina> rutinas) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_RUTINAS))) {
             oos.writeObject(rutinas);
@@ -20,7 +20,7 @@ public class DataStore {
         }
     }
 
-    // === Cargar rutinas ===
+    
     @SuppressWarnings("unchecked")
     public static List<Rutina> loadRutinas() {
         File file = new File(FILE_RUTINAS);
@@ -41,7 +41,7 @@ public class DataStore {
         return new ArrayList<>();
     }
 
-    // === Guardar usuarios ===
+    
     public static void saveUsuarios(List<Usuario> usuarios) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_USUARIOS))) {
             oos.writeObject(usuarios);
@@ -51,7 +51,7 @@ public class DataStore {
         }
     }
 
-    // === Cargar usuarios ===
+    
     @SuppressWarnings("unchecked")
     public static List<Usuario> loadUsuarios() {
         File file = new File(FILE_USUARIOS);

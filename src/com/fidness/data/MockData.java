@@ -13,14 +13,14 @@ public class MockData {
     private static final Pattern EMAIL_RE = Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
 
     static {
-        // === Cargar usuarios desde archivo si existen ===
+        
         usuarios.addAll(DataStore.loadUsuarios());
         if (usuarios.isEmpty()) {
             usuarios.add(new Admin(1, "Admin", "admin@fidness.com", "admin"));
             usuarios.add(new Cliente(2, "Marco", "marco@example.com", "1234"));
         }
 
-        // === Ejercicios base ===
+        
         String basePath = "images/";
         ejercicios.add(new EjercicioFuerza(1, "Curl de Bíceps", "Brazo", "Ejercicio de fuerza para bíceps", basePath + "curlbiceps.jpg"));
         ejercicios.add(new EjercicioFuerza(2, "Peso Muerto", "Espalda", "Fuerza para cadena posterior", basePath + "pesomuerto.jpg"));
@@ -28,7 +28,7 @@ public class MockData {
         ejercicios.add(new Ejercicio(4, "Sentadilla", "Pierna", "Flexión de rodillas manteniendo espalda recta.", basePath + "sentadilla.jpg"));
         ejercicios.add(new Ejercicio(5, "Press banca", "Pecho", "Empuje de barra acostado.", basePath + "pressdebanca.jpg"));
 
-        // === Cargar rutinas persistentes si existen ===
+        
         List<Rutina> cargadas = DataStore.loadRutinas();
         if (cargadas != null) rutinas.addAll(cargadas);
     }
